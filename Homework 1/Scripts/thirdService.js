@@ -6,7 +6,7 @@ function autentificareGithub() {
 
   var type = "POST";
   var logRequest = {
-    'api': 'bing',
+    'api': 'github',
     'type': type,
     'url': url,
     'Date': Date(),
@@ -46,7 +46,7 @@ function createGist(token) {
 
   var type = "POST";
   var logRequest = {
-    'api': 'bing',
+    'api': 'github',
     'type': type,
     'url': url,
     'Date': Date(),

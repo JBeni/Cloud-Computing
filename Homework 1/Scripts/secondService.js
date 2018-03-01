@@ -25,7 +25,7 @@ function getImageFromBing() {
       type: type,
       url: url,
       beforeSend: function(xhrObj){
-        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "303acf5ed6c44527866c6d7831303ff9");
+        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "GENERATE YOUR KEY FROM BING IMAGE API");
       },
 
       success: function(data, response) {

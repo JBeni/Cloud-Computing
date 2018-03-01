@@ -7,29 +7,29 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="Scripts/firstService.js"></script>
-    <script type="text/javascript" src="Scripts/secondService.js"></script>
-    <script type="text/javascript" src="Scripts/thirdService.js"></script>
-
-    <script type="text/javascript" src="Scripts/utilities.js"></script>
+    <script type="text/javascript" src="Scripts\firstService.js"></script>
+    <script type="text/javascript" src="Scripts\secondService.js"></script>
+    <script type="text/javascript" src="Scripts\thirdService.js"></script>
+    <script type="text/javascript" src="Scripts\utilities.js"></script>
 
     <title>Homework [1]</title>
   </head>
 
   <body>
-      <h1>Use three services (3 Api)</h1>
+      <h1>Web Services</h1>
 
       <input id="search" name="search">
-      <button id="submit" value="Search" onclick="setup()">Search Text</button>
+      <button id="submit-wikipedia">Search Text</button>
 
       <br> <br>
-      <button id="sub" onclick="getPhotos()">Search Image</button>
+      <button id="submit-bing">Search Image</button>
 
       <center>
-        <button onclick="export_json()">Export JSON</button>
+        <button id="export_json">Export JSON</button>
 
         <br> <br>
-        <button onclick="writeLogFile()">Write Log File</button>
+        <button id="export_log_github">Github Log</button>
+        <button id="export_log_wikipedia_bing"> Wikipedia Bing Log</button>
       </center> <br> <br>
 
       <center>
@@ -42,7 +42,7 @@
           <br> <br>
           <input id="description" type="text" name="description" placeholder="File Description">
           <br> <br>
-          <button onclick="autentificareGithub()">Submit Github</button>
+          <button id="submit-github">Submit Github</button>
         </form>
       </center>
 

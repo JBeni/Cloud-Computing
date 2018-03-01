@@ -1,39 +1,51 @@
 var searchInput = "";
 
-function setup() {
-//    if ($("ul li").length > 1)
-//      $("ul li").remove();
-    getDataFromWikipedia();
+function runFirstApi() {
+  getDataFromWikipedia();
+  clearInputAfterSubmit();
+}
 
-    $('input[name=search]').val('');
+function clearInputAfterSubmit() {
+  $('input[name=search]').val('');
 }
 
 function getDataFromWikipedia() {
   searchInput = document.getElementById('search').value;
   var url = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&callback=?";
+  var type = "GET";
+
+  var logRequest = {
+    'api': 'wikipedia',
+    'type': type,
+    'url': url,
+    'Date': Date(),
+  };
 
     $.ajax({
-      type: "GET",
+      type: type,
       url: url,
       async: false,
       dataType: "json",
       success: function(data, response) {
-        localStorage.setItem("logWikipedia_" + localStorage.length, JSON.stringify(data));
+        localStorage.setItem("logWikipediaSuccess_" + localStorage.length, JSON.stringify(data));
+        localStorage.setItem("logWikipediaRequest_" + localStorage.length, JSON.stringify(logRequest));
+        console.log(logRequest);
 
         for (var index = 0; index < 10; index++) {
           if (data[1][index]) {
-    				$("#informatii").append("<li clasa='keyword'>" + (index + 1) + ". " + data[1][index] + "</li>");
+    				$("#informatii").append("<li>" + (index + 1) + ". " + data[1][index] + "</li>");
     				$("#informatii").append("<li>" + " <a href='" + data[3][index] +  "'>" + data[3][index] + "</a></li>");
-    				$("#informatii").append("<li>" + " " + data[2][index] + "</li>");
-            $("#informatii").append("<br>");
+    				$("#informatii").append("<li>" + " " + data[2][index] + "</li><br>");
             saveWikipediaData(data[1][index], data[2][index], data[3][index]);
           }
         }
-        $("#informatii").append("<br> <br>");
+        $("#informatii").append("<br> <br>")
       },
 
       error: function(data, response){
-        localStorage.setItem("logWikipedia_" + localStorage.length, JSON.stringify(data));
+        localStorage.setItem("logWikipediaError_" + localStorage.length, JSON.stringify(data));
+        localStorage.setItem("logWikipediaRequest_" + localStorage.length, JSON.stringify(logRequest));
+        console.log(logRequest);
       },
     });
 }
@@ -100,3 +112,11 @@ function export_json() {
 
 	link.click();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('export_json').addEventListener('click', export_json);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('submit-wikipedia').addEventListener('click', runFirstApi);
+});

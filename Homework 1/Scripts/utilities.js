@@ -1,5 +1,13 @@
 
-function writeLogFile() {
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('export_log_github').addEventListener('click', writeLogFileGithub);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('export_log_wikipedia_bing').addEventListener('click', writeLogFileWikipedia_Bing);
+});
+
+function writeLogFileWikipedia_Bing() {
   var content = '';
 
   for (var index = 0; index < localStorage.length; index++) {
@@ -7,8 +15,73 @@ function writeLogFile() {
     var localData = key.split("_");
 
 	  var adnotare = localStorage.getItem(key);
-    if (localData[0] == "logGithubAuthDone" && adnotare !== "success" && adnotare !== "error") {
-	     var jsonData = JSON.parse(adnotare);
+    if (localData[0] == "logWikipediaError") {
+       var jsonData = JSON.parse(adnotare);
+
+   		 content += '{\n\t'.toString();
+   		 content += '"logBingError": "'.toString();
+   		 content += key.toString() + '",\n\t\t'.toString();
+
+       content += '"readyState": "'.toString();
+   		 content += jsonData.readyState + '",\n\t\t'.toString();
+
+       content += '"status": "'.toString();
+   		 content += jsonData.status + '",\n\t\t'.toString();
+
+       content += '"statusText": "'.toString();
+   		 content += jsonData.statusText + '",\n'.toString();
+
+   		 content += '}\n\n'.toString();
+    }else if(localData[0] == "logBingError") {
+      var jsonData = JSON.parse(adnotare);
+
+      content += '{\n\t'.toString();
+      content += '"logBingError": "'.toString();
+      content += key.toString() + '",\n\t\t'.toString();
+
+      content += '"readyState": "'.toString();
+      content += jsonData.readyState + '",\n\t\t'.toString();
+
+      content += '"message": "'.toString();
+      content += jsonData.responseJSON.message + '",\n\t\t'.toString();
+
+      content += '"statusCode": "'.toString();
+      content += jsonData.responseJSON.statusCode + '",\n\t\t'.toString();
+
+      content += '"status": "'.toString();
+      content += jsonData.status + '",\n\t\t'.toString();
+
+      content += '"statusText": "'.toString();
+      content += jsonData.statusText + '",\n'.toString();
+
+      content += '}\n\n'.toString();
+    }
+  }
+
+  let jsonContent = "data:text/json; charset=utf-8,";
+  jsonContent += content;
+  var encodedUri = encodeURI(jsonContent);
+  var link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", "logDataWikipediaBing.json");
+  document.body.appendChild(link);
+
+  link.click();
+}
+
+/*  -----------------------------------------------------  */
+
+
+function writeLogFileGithub() {
+  var content = '';
+
+  for (var index = 0; index < localStorage.length; index++) {
+    var key = localStorage.key(index);
+    var localData = key.split("_");
+
+	  var adnotare = localStorage.getItem(key);
+    if (localData[0] == "logGithubAuthDone") {
+       var jsonData = JSON.parse(adnotare);
 
    		 content += '{\n\t'.toString();
    		 content += '"logGithubAuthDone": "'.toString();
@@ -57,7 +130,9 @@ function writeLogFile() {
    		 content += jsonData.url + '",\n'.toString();
 
    		 content += '}\n\n'.toString();
-    }else if(localData[0] == "logGithubGistDone" && adnotare !== "success" && adnotare !== "error") {
+    }else if(localData[0] == "logGithubGistDone") {
+      var jsonData = JSON.parse(adnotare);
+
       content += '{\n\t'.toString();
       content += '"logGithubGistDone": "'.toString();
       content += key.toString() + '",\n\t\t'.toString();
@@ -117,7 +192,9 @@ function writeLogFile() {
       content += jsonData.url + '",\n'.toString();
 
       content += '}\n\n'.toString();
-    }else if(localData[0] == "logGithubAuthFail" && adnotare !== "success" && adnotare !== "error") {
+    }else if(localData[0] == "logGithubAuthFail") {
+      var jsonData = JSON.parse(adnotare);
+
       content += '{\n\t'.toString();
       content += '"logGithubAuthFail": "'.toString();
       content += key.toString() + '",\n\t\t'.toString();
@@ -131,9 +208,6 @@ function writeLogFile() {
       content += '"documentation_url": "'.toString();
       content += jsonData.responseJSON.documentation_url + '",\n\t\t'.toString();
 
-      content += '"responseText": "'.toString();
-      content += jsonData.responseText + '",\n\t\t'.toString();
-
       content += '"status": "'.toString();
       content += jsonData.status + '",\n\t\t'.toString();
 
@@ -141,7 +215,9 @@ function writeLogFile() {
       content += jsonData.statusText + '",\n'.toString();
 
       content += '}\n\n'.toString();
-    }else if(localData[0] == "logGithubGistFail" && adnotare !== "success" && adnotare !== "error") {
+    }else if(localData[0] == "logGithubGistFail") {
+      var jsonData = JSON.parse(adnotare);
+
       content += '{\n\t'.toString();
       content += '"logGithubGistFail": "'.toString();
       content += key.toString() + '",\n\t\t'.toString();
@@ -149,11 +225,11 @@ function writeLogFile() {
       content += '"readyState": "'.toString();
       content += jsonData.readyState + '",\n\t\t'.toString();
 
-      content += '"responseJSON": "'.toString();
-      content += jsonData.responseJSON + '",\n\t\t'.toString();
+      content += '"message": "'.toString();
+      content += jsonData.responseJSON.message + '",\n\t\t'.toString();
 
-      content += '"responseText": "'.toString();
-      content += jsonData.responseText + '",\n\t\t'.toString();
+      content += '"documentation_url": "'.toString();
+      content += jsonData.responseJSON.documentation_url + '",\n\t\t'.toString();
 
       content += '"status": "'.toString();
       content += jsonData.status + '",\n\t\t'.toString();
@@ -170,7 +246,7 @@ function writeLogFile() {
   var encodedUri = encodeURI(jsonContent);
   var link = document.createElement("a");
   link.setAttribute("href", encodedUri);
-  link.setAttribute("download", "logData.json");
+  link.setAttribute("download", "logDataGithub.json");
   document.body.appendChild(link);
 
   link.click();

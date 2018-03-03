@@ -16,9 +16,85 @@ body {
   list-style-type: none;
 }
 
-.coloana {
+.coloana_1_1 {
+  float: left;
+  width: 45%;
+  padding: 10px;
+  height: 360px;
+}
+
+.coloana_1_2 {
+  float: left;
+  width: 35%;
+  padding: 10px;
+  height: 360px;
+}
+
+.coloana_1_3 {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 360px;
+}
+
+.coloana_2 {
+  margin-top: 65px;
   float: left;
   width: 50%;
   padding: 10px;
-  height: 300px;
+  height: 1100px;
+}
+
+#homework {
+  text-align: center;
+}
+
+#export_json {
+  margin-left: 15px;
+}
+
+#export_log_github {
+  margin-left: 23px;
+}
+
+#submit-github {
+  margin-left: 24px;
+}
+
+#submit-wikipedia {
+  margin-left: 25px;
+}
+
+#submit-bing {
+  margin-left: 21px;
+}
+
+#logo_1 {
+  width: 40%;
+}
+
+#logo_2 {
+  width: 40%;
+  margin-bottom: 38px;
+}
+
+#logo_3 {
+  width: 40%;
+  display: block;
+  margin: 10 auto;
+}
+
+#logo_4 {
+  width: 70%;
+  margin-top: 15px;
+}
+
+#search {
+  margin-left: 55px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }

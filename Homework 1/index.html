@@ -16,47 +16,59 @@
   </head>
 
   <body>
-      <h1>Web Services</h1>
+      <h1 id="homework">Web Services</h1>
 
-      <input id="search" name="search">
-      <button id="submit-wikipedia">Search Text</button>
-
-      <br> <br>
-      <button id="submit-bing">Search Image</button>
-
-      <center>
-        <button id="export_json">Export JSON</button>
-
-        <br> <br>
-        <button id="export_log_github">Github Log</button>
-        <button id="export_log_wikipedia_bing"> Wikipedia Bing Log</button>
-      </center> <br> <br>
-
-      <center>
-        <form onsubmit="return false;">
-          <input id="username" type="text" name="username" placeholder="User Name" value="">
+      <div id="container_1">
+        <div class="coloana_1_1">
+          <img id="logo_1" src="Images/wikipedia-logo.jpg">
+          <img id="logo_2" src="Images/bing-logo.jpg">
           <br> <br>
-          <input id="password" type="password" name="password" placeholder="Password" value="">
+          <input id="search" name="search">
           <br> <br>
-          <input id="fileName" type="text" name="fileName" placeholder="File Name">
-          <br> <br>
-          <input id="description" type="text" name="description" placeholder="File Description">
-          <br> <br>
-          <button id="submit-github">Submit Github</button>
-        </form>
-      </center>
+          <button id="submit-wikipedia">Search Text</button>
+          <button id="submit-bing">Search Image</button>
+        </div>
 
-      <div id="container">
-        <div class="coloana">
+        <div class="coloana_1_2">
+          <form onsubmit="return false;">
+            <img id="logo_3" src="Images/github-logo.png">
+            <br> <br>
+            <input id="username" type="text" name="username" placeholder="User Name" value="">
+            <br> <br>
+            <input id="password" type="password" name="password" placeholder="Password" value="">
+            <br> <br>
+            <input id="fileName" type="text" name="fileName" placeholder="File Name">
+            <br> <br>
+            <input id="description" type="text" name="description" placeholder="File Description">
+            <br> <br>
+            <button id="submit-github">Submit Github</button>
+          </form>
+        </div>
+
+        <div class="coloana_1_3">
+          <img id="logo_4" src="Images/log-file-logo.png">
+          <br> <br>
+          <button id="export_json">Export JSON</button>
+          <br> <br>
+          <button id="export_log_github">Github Log</button>
+          <br> <br>
+          <button id="export_log_wikipedia_bing"> Wikipedia Bing Log</button>
+        </div>
+      </div>
+
+      <div id="container_2">
+        <div class="coloana_2">
           <ul id="informatii">
           </ul>
         </div>
 
-        <div class="coloana">
+        <div class="coloana_2">
           <ul id="picture">
           </ul>
         </div>
       </div>
+
+      <footer class="text-center text-second">Powered by <a href="https://www.linkedin.com/in/beniamin-j%C3%AEtc%C4%83/" target="_blank">Jîtcă Beniamin</a></footer>
 
   </body>
 <html>

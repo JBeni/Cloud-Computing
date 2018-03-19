@@ -1,0 +1,17 @@
+{
+    "products": {
+        "product_1": {
+            "id": 1,
+            "name": "apple",
+            "category": "citri",
+            "vitamins": "A,C"
+        },
+
+        "product_2": {
+            "id": 2,
+            "name": "banana",
+            "category": "cit",
+            "vitamins": "D"
+        }
+    }
+}

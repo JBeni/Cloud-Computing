@@ -1,0 +1,51 @@
+{
+  "name": "appengine-tema-3",
+  "description": "Simple Hello World Node.js sample for Google App Engine Flexible Environment.",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Google Inc.",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "lint": "repo-tools lint",
+    "pretest": "npm run lint",
+    "system-test": "repo-tools test app",
+    "test": "npm run system-test",
+    "e2e-test": "repo-tools test deploy"
+  },
+  "dependencies": {
+    "@google-cloud/logging": "^1.2.0",
+    "@google-cloud/monitoring": "^0.5.0",
+    "@google-cloud/storage": "^1.6.0",
+    "@google/maps": "^0.4.6",
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.8",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "google": "^2.1.0",
+    "google-maps": "^3.2.1",
+    "https": "^1.0.0",
+    "middleware": "^1.0.0",
+    "navigator": "^1.0.1",
+    "node-geocoder": "^3.22.0",
+    "npm": "^5.8.0",
+    "processing-js": "^1.6.6",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "2.2.1"
+  },
+  "cloud-repo-tools": {
+    "test": {
+      "app": {
+        "msg": "Hello, world!"
+      }
+    },
+    "requiresKeyFile": true,
+    "requiresProjectId": true
+  }
+}

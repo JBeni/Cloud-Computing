@@ -1,2 +1,4 @@
 # Cloud-Computing
-FII : CC Homework repo 
+
+* Informatica, Universitatea "Alexandru Ioan Cuza" Iasi
+* Cloud Computing - Homework repository 

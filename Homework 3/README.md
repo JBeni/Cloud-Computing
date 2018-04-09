@@ -1,9 +1,9 @@
 # To run this app, you need to install several modules for node.js
 
-* require('express');
-* require('body-parser');
-* require('@google-cloud/storage');
-* require('https');
+* npm install --save express
+* npm install --save body-parser
+* npm install --save @google-cloud/storage
+* npm install --save https
 
 # Quickstart for Node.js in the App Engine Flexible Environment
 

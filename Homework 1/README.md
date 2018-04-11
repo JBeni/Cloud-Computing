@@ -2,7 +2,7 @@
 
 * Observation: The third web service must use the results from previous two.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<hr>
 
 * Within this homework I used the following 4 web services:
 	* Wikipedia Api

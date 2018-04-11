@@ -19,7 +19,7 @@ http.createServer(function(req, res) {
         res.write(content + "<br/><br/>" + "HTTP Status Code: 200, OK");
 
       }else if (req.url.split("=")[0] == "/products/fruit?") {
-        // /product/fruit?=numeCamp (product_1)
+        // /products/fruit?=numeCamp (product_1)
         var requestUrl = req.url.split('?');
         var fruitName = requestUrl[1].replace("=", "");
 

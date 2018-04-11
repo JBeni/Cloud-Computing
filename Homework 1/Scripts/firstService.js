@@ -27,6 +27,7 @@ function getDataFromWikipedia() {
       async: false,
       dataType: "json",
       success: function(data, response) {
+        console.log(data);
         localStorage.setItem("logWikipediaSuccess_" + localStorage.length, JSON.stringify(data));
         localStorage.setItem("logWikipediaRequest_" + localStorage.length, JSON.stringify(logRequest));
         console.log(logRequest);

@@ -1,13 +1,13 @@
-﻿* Homework [1]: Create an application that provides results from at least three different web services. Use or implement a system that allows (at least): monitoring of running web services, concurrent number of requests, logging requests/responses.
+* Homework [1]: Create an application that provides results from at least three different web services. Use or implement a system that allows (at least): monitoring of running web services, concurrent number of requests, logging requests/responses.
 
 * Observation: The third web service must use the results from previous two.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--> Within this homework I used the following 4 web services:
-	-> Wikipedia Api
-		-> With this api I search information about various things
-		-> The response to the request is an array with: the name of the search, a link to the wikipedia and some information about the given word
+* Within this homework I used the following 4 web services:
+	* Wikipedia Api
+		* With this api I search information about various things
+		* The response to the request is an array with: the name of the search, a link to the wikipedia and some information about the given word
 	-> Bing Api
 		-> With this api I search images about different places
 		-> In order to use this api you need a key (you can get this key from the microsoft site, the key lasts 30 days), and the response of the request is in json format

@@ -1,9 +1,14 @@
-# To run this app, you need to install several modules for node.js
+# Google App Engine
 
-* npm install --save express
-* npm install --save body-parser
-* npm install --save @google-cloud/storage
-* npm install --save https
+* Homework [3]: Create an application that use Google Cloud ecosystem. Requirements - the application is using at least three Google Cloud services (one is Statefull) and is located in appspot.com domain.
+
+<hr>
+
+* To run this app, you need to install several modules for node.js
+	* npm install --save express
+	* npm install --save body-parser
+	* npm install --save @google-cloud/storage
+	* npm install --save https
 
 # Quickstart for Node.js in the App Engine Flexible Environment
 
@@ -15,7 +20,6 @@ documentation.
 * [Setup](#setup)
 * [Running locally](#running-locally)
 * [Deploying to App Engine](#deploying-to-app-engine)
-* [Running the tests](#running-the-tests)
 
 ## Setup
 
@@ -26,38 +30,14 @@ Before you can run or deploy the sample, you need to do the following:
 1.  Install dependencies:
 
     With `npm`:
-
         npm install
-
-    or with `yarn`:
-
-        yarn install
 
 ## Running locally
 
-With `npm`:
-
-    npm start
-
-or with `yarn`:
-
-    yarn start
+	* With `npm`:
+	    * npm start
 
 ## Deploying to App Engine
 
-With `npm`:
-
-    npm run deploy
-
-or with `yarn`:
-
-    yarn run deploy
-
-## Running the tests
-
-See [Contributing][contributing].
-
-[appengine]: https://cloud.google.com/appengine/docs/flexible/nodejs
-[tutorial]: https://cloud.google.com/appengine/docs/flexible/nodejs/quickstart
-[readme]: ../README.md
-[contributing]: https://github.com/GoogleCloudPlatform/nodejs-docs-samples/blob/master/CONTRIBUTING.md
+	* With `npm`:
+	    * npm run deploy

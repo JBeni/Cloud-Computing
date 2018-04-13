@@ -4,6 +4,13 @@
 
 <hr>
 
+* Google Cloud Services used within this homework:
+	* Google Cloud Storage
+	* Google Cloud Functions (Beta)
+	* Google Maps APIs
+
+<hr>
+
 * To run this app, you need to install several modules for node.js
 	* npm install --save express
 	* npm install --save body-parser

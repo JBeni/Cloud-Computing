@@ -22,7 +22,7 @@ app.post('/upload', (req, res) => {
 
 // Azure Storage
 function uploadImageStorage(imageName, imageLink) {
-  var blobService = azure.createBlobService('storagehomework4', 'cjG9horuuDXRDLFVoX/LKP54bBb1Z5lWodjW8hG7SGavNOYXfIheon/1eWSRmAfADu05jgLaUajdhqP0ZK0/FA==');
+  var blobService = azure.createBlobService('storage-name', 'access key');
 
   blobService.createBlockBlobFromLocalFile('images', imageName, imageLink, function(error, result, response) {
     if (!error) {

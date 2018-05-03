@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <style>
+            * {
+              list-style-type: none;
+              box-sizing: border-box;
+            }
+
+            body {
+              background-size: 100% 100%;
+            }
+
+            .coloana_2 {
+              margin-top: 65px;
+              float: left;
+              width: 50%;
+              padding: 10px;
+              height: 1100px;
+            }
+        </style>
+
+        <title>Homework [4] Azure</title>
+    </head>
+
+    <body>
+        <h1 id="homework">Windows Azure : Services</h1>
+
+        <form method="post" action="/upload">
+            <input type="file", id="files", name="files[]", multiple="multiple">
+            <br/><br/>
+            <input type="submit" value="Upload Image">
+            <br/><br/>
+        </form>
+
+        <div id="container_1">
+            <div>
+                <input id="search" name="search">
+                <br> <br>
+                <button id="submit-bing" onclick="runFirstService()">Search Image</button>
+            </div>
+        </div>
+
+        <div id="container_2">
+            <div class="coloana_2">
+                <h2>Display Image</h2>
+                <ul id="picture">
+                </ul>
+            </div>
+
+            <div class="coloana_2">
+                <h2>Analyzed Image</h2>
+                <ul id="tags">
+                </ul>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            var globalUrl = "";
+            var searchInput = "";
+
+            function runFirstService() {
+                getImageFromBing();
+                clearInputAfterSubmit();
+            }
+
+            function clearInputAfterSubmit() {
+                $('input[name=search]').val('');
+            }
+
+            function getImageFromBing() {
+                searchInput = document.getElementById('search').value;
+                var url = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?q=" + encodeURIComponent(searchInput) + "&mkt=en-US&SafeSearch=strict&aspect=all&count=25&offset=0";
+                globalUrl = url;
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    beforeSend: function(xhrObj){
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "4b488cded3674deb99ad8d928de52497");
+                    },
+
+                    success: function(data, response) {
+                        for (var index = 0; index < 10; index++) {
+                            if (index < 5) {
+                            	console.log(data.value[index]);
+                                $("#picture").append('<li clasa="picture">' + data.value[index].name + '</li>');
+                                $("#picture").append('<li clasa="picture">' + '<img src="' + data.value[index].thumbnailUrl + '" />' + '</li><br>');
+                                globalUrl = data.value[index].thumbnailUrl;
+                                processImage(globalUrl);
+                            }
+                        }
+                    },
+
+                    error: function(data, response){
+                        console.log("Error on plane : first service : image API on fire");
+                    },
+                });
+            }
+
+            //Computer Vison API
+            function processImage(globalu) {
+                var subscriptionKey = "7bcb1679299d47af80062ccd2eff7ecb";
+                var uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze";
+
+                // Request parameters.
+                var params = {
+                    "visualFeatures": "Categories,Description,Color",
+                    "details": "",
+                    "language": "en",
+                };
+
+                // Display the image.
+                $.ajax({
+                    url: uriBase + "?" + $.param(params),
+                    beforeSend: function(xhrObj){
+                        xhrObj.setRequestHeader("Content-Type","application/json");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+                    },
+                    type: "POST",
+                    data: '{"url": ' + '"' + globalu+ '"}',
+                }).done(function(data) {
+                    // Show formatted JSON on webpage.
+                    var a = JSON.stringify(data, null, 2);
+                    var json = JSON.parse(a);
+                    var tag = "";
+
+                    for(var i = 0; i<10; i++){
+                        tag += " " + json.description.tags[i];
+                    }
+
+                    $("#tags").append('<li clasa="tags word-wrap:break-word;" display: block;>' + tag + '</li>');
+                    $("#tags").append('<li clasa="tags">' + '<img src="' + globalu + '" />' + '</li><br>');
+                    console.log(json.description.tags.length + json.description.tags);
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    // Display error message.
+                    var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+                    errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
+                    alert(errorString);
+                });
+            };
+        </script>
+
+    </body>
+</html>

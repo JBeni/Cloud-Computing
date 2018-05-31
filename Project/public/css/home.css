@@ -1,0 +1,284 @@
+
+* {
+    box-sizing: border-box;
+}
+
+#navigation_1 {
+    height: 80px;
+    margin-top: -9px;
+    margin-left: -10px;
+    margin-right: -7.5px;
+    margin-bottom: 50px;
+    background-color: black;
+}
+
+#navigation_2 {
+    height: 23px;
+    margin-top: -17px;
+    margin-left: -10px;
+    margin-right: -7.5px;
+    margin-bottom: 50px;
+    background-color: white;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+span a {
+    margin-right: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #282828;
+}
+
+a {
+    text-decoration: none;
+}
+
+#bar_2 {
+    position: absolute;
+    margin-top: -17px;
+    margin-left: 280px;
+}
+
+#container_1 {
+    width: 100%;
+    height: 100%;
+}
+
+.bar_color {
+    width: 18%;
+    height: 25px;
+    background-color: black;
+    border-bottom-right-radius: 15px;
+    margin-left: -10px;
+    margin-top: -15px;
+}
+
+.absolute {
+    position: absolute;
+    margin-left: 270px;
+    margin-top: -25px;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.coloana_1 {
+    float: left;
+    width: 20%;
+    height: 400px;
+    margin-left: 270px;
+    margin-top: 20px;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+
+.coloana_1 h5 a {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 18px;
+}
+
+.coloana_1 .last {
+    position: absolute;
+    font-weight: 16px;
+    font-weight: bold;
+    color: gray;
+    margin-top: 37px;
+}
+
+
+.coloana_2 {
+    float: left;
+    width: 20%;
+    height: 400px;
+    margin-left: -55px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+
+.coloana_2 h5 a {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 18px;
+}
+
+.coloana_2 .last {
+    position: absolute;
+    font-weight: 16px;
+    font-weight: bold;
+    color: gray;
+    margin-top: 37px;
+}
+
+
+.coloana_3 {
+    float: left;
+    width: 20%;
+    height: 400px;
+    margin-left: -55px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+
+.coloana_3 h5 a {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 18px;
+}
+
+.coloana_3 .last {
+    position: absolute;
+    font-weight: 16px;
+    font-weight: bold;
+    color: gray;
+    margin-top: 37px;
+}
+
+
+.coloana_4 {
+    float: left;
+    width: 20%;
+    height: 400px;
+    margin-left: -55px;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+
+.coloana_4 h5 a {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 18px;
+}
+
+.coloana_4 .last {
+    position: absolute;
+    font-weight: 16px;
+    font-weight: bold;
+    color: gray;
+    margin-top: 37px;
+}
+
+
+img {
+    border: 1px solid black;
+    box-shadow: 4px 6px #888888;
+    width: 218px;
+    height: 325px;
+}
+
+img:hover {
+    border: 5px solid black;
+    letter-spacing: 0;
+}
+
+
+#artifacty {
+    border: none;
+    box-shadow: none;
+    width: 210px;
+    height: 80px;
+    margin-top: 4x;
+    margin-left: 281px;
+}
+
+#bar_1 {
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 630px;
+    font-size: 20px;
+}
+
+#bar_1 span a {
+    margin-right: 25px;
+}
+
+#bar_1 span a:hover {
+    color: antiquewhite !important;
+}
+
+#bar_2 span a:hover {
+    color: red;
+}
+
+#facebook {
+    position: absolute;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+#twitter {
+    position: absolute;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+#youtube {
+    position: absolute;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-top: 13px;
+    margin-left: 70px;
+}
+
+#bar_0 {
+    position: absolute;
+    width: 710px;
+    height: 1px;
+    background-color: #888888;
+    border-radius: 1px 2px;
+    margin-top: -40px;
+    margin-left: 500px;
+}
+
+
+#join {
+    position: absolute;
+    font-weight: bold;
+    font-size: 15px;
+    color: whitesmoke;
+    margin-top: 16px;
+    margin-left: 605px;
+}
+
+#sign {
+    position: absolute;
+    font-weight: bold;
+    font-size: 13px;
+    color: whitesmoke;
+    margin-top: 16px;
+    margin-left: 665px;
+    color: red;
+}
+
+
+#bar_color {
+    width: 1501px;
+    height: 70px;
+    background-color: black;
+    margin-top: 2200px;
+    margin-left: -10px;
+}
+
+footer {
+    position: absolute;
+    margin-left: 610px;
+    margin-top: 15px;
+    color: gray;
+}
+

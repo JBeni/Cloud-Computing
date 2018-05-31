@@ -1,0 +1,56 @@
+<head>
+
+  <style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+
+</head>
+<body>
+<form action="/Add" method="post">
+  <div class="container">
+    <h1>Add Artefact</h1>
+    <label for="nume"><b>Nume</b></label>
+    <input type="text" id="nume" name="nume" placeholder="Enter Name" required>
+
+    <label for="lat"><b>Latitudine</b></label>
+    <input type="text" id="lat" name="lat" placeholder="Enter Latitude" required>
+
+    <label><b>Longitudine</b>
+  <input name="long" id="long" type="text" placeholder="Enter Longitude" />
+</label>
+<br>
+    <div class="clearfix">
+      <button id="signupBtn" type="submit" class="signupbtn">Add</button>
+    </div>
+  </div>
+</form>
+</body>

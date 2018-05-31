@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Universe of Artifacts</title>
+
+	<style>
+    div#map {
+      width: 600px;
+      height: 400px;
+    }
+
+    .hid {
+      visibility: hidden;
+    }
+		</style>
+  </head>
+
+  <body>
+
+      <div id="navigation_1">
+          <header>
+              <nav>
+                  <div id="bar_1">
+                      <span>
+                          <a style="color: gray" href="/">Home</a>
+                          <a style="color: gray" href="/news">LATEST NEWS</a>
+                          <a style="color: gray" href="/list"><strong>Artifacts</strong></a>
+                          <a style="color: gray" class="fa fa-search" href="/search"><strong> Search Location</strong></a>
+                      </span>
+                  </div>
+              </nav>
+          </header>
+      </div> <!-- navigation_1 div -->
+
+
+	<form method="post" action="/searched">
+    	<div class="hid">Lat: <input id="lat" type = "text" name ="lat" value = <%= lat %>> </div>
+    	<div class="hid">Long: <input id = "long" type = "text" name ="lat" value = <%= long %>> </div>
+		<label>Search for:</label>
+		<input type="text" name="query" id="query">
+		<button>Submit</button>
+	</form>
+
+    <div id="map"></div>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        var uluru = {lat: parseFloat(document.getElementById("lat").value), lng:  parseFloat(document.getElementById("long").value)};
+        console.log(uluru);
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+      }
+    </script>
+    <script async defer src='https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCynXkaHX-SW0yZG5mZFBJFiJDDu36Eh8o&callback=initMap'>
+    </script>
+
+  <div id="bar_color">
+    <div id="footer">
+        <footer>&copy; Artifacty Office 2018</footer>
+    </div>
+  </div>
+
+  </body>
+</html>
+

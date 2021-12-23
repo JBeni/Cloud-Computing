@@ -1,4 +1,4 @@
 # Cloud-Computing
 
-* Computer Science, University "Alexandru Ioan Cuza" Iasi
-* Cloud Computing - Homework repository 
+* Computer Science, University "Alexandru Ioan Cuza" Iasi, Romania
+* Cloud Computing - Homework repository
